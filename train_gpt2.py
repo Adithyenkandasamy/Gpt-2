@@ -463,7 +463,7 @@ for step in range(max_steps):
                 logits = logits[:, -1, :] # (B, vocab_size)
                 # get the probabilities
                 probs = F.softmax(logits, dim=-1)
-                # do top-k sampling of 50 (huggingface pipeline         )
+                # do top-k sampling of 50 (huggingface pipeline        )
                 # topk_probs here becomes (5, 50), topk_indices is (5, 50)
                 topk_probs, topk_indices = torch.topk(probs, 50, dim=-1)
                 # select a token from the top-k probabilities
